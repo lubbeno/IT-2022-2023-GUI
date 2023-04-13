@@ -80,7 +80,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>lubos.sukup.it20222023gui/lubos.sukup.it20222023gui.HelloApplication</mainClass>
+                            <mainClass>lubos.sukup.it20222023gui/lubos.sukup.it20222023gui.basic.HelloApplication</mainClass>
                         </configuration>
                     </execution>
                 </executions>

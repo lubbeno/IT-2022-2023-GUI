@@ -6,6 +6,8 @@ module lubos.sukup.it20222023gui {
     requires com.dlsc.formsfx;
     requires validatorfx;
 
-    opens lubos.sukup.it20222023gui to javafx.fxml;
-    exports lubos.sukup.it20222023gui;
+    exports lubos.sukup.it20222023gui.gridpane;
+    exports lubos.sukup.it20222023gui.basic;
+    opens lubos.sukup.it20222023gui.basic to javafx.fxml;
+    opens lubos.sukup.it20222023gui.gridpane to javafx.fxml;
 }

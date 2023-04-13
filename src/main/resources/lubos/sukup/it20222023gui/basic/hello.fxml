@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="lubos.sukup.it20222023gui.basic.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+    <Label textFill="blueviolet" text="ucime sa JavuFX"/>
+    <Label textFill="red" text="Lubos Sukup" fx:id="menoPriezvisko"/>
+    <TextField focusTraversable="false" promptText="zadaj sem text"
+               maxWidth="-Infinity" fx:id="prveTextovePole"></TextField>
+    <Label text="tu je prvy label" fx:id="welcomeText"/>
+    <Button text="Moje prve tlacidlo !" onAction="#onHelloButtonClick"/>
+    <Button text="zobrazenie textoveho pola" onAction="#zobrazPole"/>
+</VBox>
