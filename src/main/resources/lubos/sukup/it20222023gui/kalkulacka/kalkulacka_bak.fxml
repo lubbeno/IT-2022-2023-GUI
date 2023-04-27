@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lubos.sukup.it20222023gui.kalkulacka.KalkulackaController">
+   <children>
+   
+       <TextField layoutX="41.0" layoutY="185.0" prefHeight="31.0" prefWidth="111.0" AnchorPane.rightAnchor="448.0" />
+       <Label layoutX="172.0" layoutY="190.0" text="  +  " AnchorPane.rightAnchor="401.0" />
+      <TextField layoutX="225.0" layoutY="185.0" prefHeight="31.0" prefWidth="111.0" />
+      <Label layoutX="366.0" layoutY="190.0" text="  =  " />
+      <TextField layoutX="413.0" layoutY="185.0" prefHeight="31.0" prefWidth="111.0" />
+      <Button onAction="#vypocitaj" layoutX="228.0" layoutY="240.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="105.0" text="Vypocitaj" textFill="#8d4444" />
+   </children>
+</AnchorPane>

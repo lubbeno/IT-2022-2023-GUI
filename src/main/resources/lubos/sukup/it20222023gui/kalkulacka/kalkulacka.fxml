@@ -1,19 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lubos.sukup.it20222023gui.kalkulacka.KalkulackaController">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="780.0"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="lubos.sukup.it20222023gui.kalkulacka.KalkulackaController">
    <children>
-   
-       <TextField layoutX="41.0" layoutY="185.0" prefHeight="31.0" prefWidth="111.0" AnchorPane.rightAnchor="448.0" />
-       <Label layoutX="172.0" layoutY="190.0" text="  +  " AnchorPane.rightAnchor="401.0" />
-      <TextField layoutX="225.0" layoutY="185.0" prefHeight="31.0" prefWidth="111.0" />
-      <Label layoutX="366.0" layoutY="190.0" text="  =  " />
-      <TextField layoutX="413.0" layoutY="185.0" prefHeight="31.0" prefWidth="111.0" />
-      <Button onAction="#vypocitaj" layoutX="228.0" layoutY="240.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="105.0" text="Vypocitaj" textFill="#8d4444" />
+      <Label fx:id="error" alignment="CENTER" contentDisplay="TOP" layoutX="279.0" layoutY="71.0" prefHeight="81.0" prefWidth="150" text="Kalkulacka" textFill="#2b538a" AnchorPane.bottomAnchor="391.0" AnchorPane.leftAnchor="264.0" AnchorPane.rightAnchor="267.0" AnchorPane.topAnchor="56.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <ComboBox layoutX="194.0" layoutY="249.0" prefHeight="31.0" prefWidth="62.0" fx:id="komboBox"/>
+      <TextField layoutX="60.0" layoutY="249.0" prefHeight="31.0" prefWidth="102.0" />
+      <TextField layoutX="57.0" layoutY="188.0" prefHeight="31.0" prefWidth="102.0" fx:id="prveCisloScitanie"/>
+      <TextField layoutX="287.0" layoutY="188.0" prefHeight="31.0" prefWidth="102.0" fx:id="druheCisloScitanie"/>
+      <TextField layoutX="287.0" layoutY="249.0" prefHeight="31.0" prefWidth="102.0" />
+      <TextField layoutX="466.0" layoutY="188.0" prefHeight="31.0" prefWidth="102.0" fx:id="vysledokScitanie" />
+      <TextField layoutX="466.0" layoutY="249.0" prefHeight="31.0" prefWidth="102.0" />
+      <Button layoutX="615.0" layoutY="188.0" mnemonicParsing="false"
+              prefHeight="31.0" prefWidth="73.0" text="scitaj" onAction="#vypocitaj1"/>
+      <Button layoutX="615.0" layoutY="249.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" text="vypocitaj" />
+      <Label alignment="TOP_CENTER" layoutX="194.0" layoutY="181.0" prefHeight="31.0" prefWidth="62.0" text="+">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="397.0" layoutY="174.0" prefHeight="31.0" prefWidth="62.0" text="=">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="397.0" layoutY="235.0" prefHeight="31.0" prefWidth="62.0" text="=">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Label alignment="TOP_CENTER" layoutX="397.0" layoutY="297.0" prefHeight="31.0" prefWidth="62.0" text="=">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <Button layoutX="615.0" layoutY="311.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="73.0" text="scitaj" onAction="#textFieldVysledok" />
+      <TextField layoutX="473.0" layoutY="311.0" prefHeight="31.0" prefWidth="102.0" fx:id="vysledokBezCombo"/>
+      <TextField layoutX="287.0" layoutY="311.0" prefHeight="31.0" prefWidth="102.0" fx:id="druheCisloBezCombo" />
+      <TextField layoutX="57.0" layoutY="311.0" prefHeight="31.0" prefWidth="102.0" fx:id="prveCisloBezCombo" />
+      <TextField layoutX="194.0" layoutY="311.0" prefHeight="31.0" prefWidth="50.0" fx:id="volbaOperacie"/>
    </children>
+   <padding>
+      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+   </padding>
 </AnchorPane>

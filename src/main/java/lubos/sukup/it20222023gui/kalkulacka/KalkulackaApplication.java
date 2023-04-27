@@ -12,10 +12,10 @@ public class KalkulackaApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(KalkulackaApplication.class
                 .getResource("kalkulacka.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setTitle("GridPane Login");
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Kalkulacka Login");
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setResizable(true);
         stage.setAlwaysOnTop(false);
         stage.show();
     }
