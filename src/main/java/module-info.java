@@ -1,4 +1,4 @@
-module lubos.sukup.it20222023gui {
+module myApp {
     requires javafx.controls;
     requires javafx.fxml;
 
@@ -10,4 +10,6 @@ module lubos.sukup.it20222023gui {
     exports lubos.sukup.it20222023gui.basic;
     opens lubos.sukup.it20222023gui.basic to javafx.fxml;
     opens lubos.sukup.it20222023gui.gridpane to javafx.fxml;
+    opens lubos.sukup.it20222023gui.kalkulacka to javafx.fxml;
+    exports lubos.sukup.it20222023gui.kalkulacka;
 }

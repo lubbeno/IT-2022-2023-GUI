@@ -30,7 +30,7 @@
     <Label text="user ID" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER"></Label>
     <Label text="password" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.halignment="CENTER"></Label>
     <Button text="OK" GridPane.columnIndex="0" GridPane.rowIndex="3" onAction="#process"></Button>
-    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"></TextField>
-    <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="password" ></PasswordField>
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="uzivatelskeMeno"></TextField>
+    <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="2" fx:id="heslo" ></PasswordField>
     <Button text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="3" GridPane.halignment="RIGHT"></Button>
 </GridPane>

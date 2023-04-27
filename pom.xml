@@ -75,15 +75,12 @@
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.6</version>
-                <executions>
-                    <execution>
                         <!-- Default configuration for running with: mvn clean javafx:run -->
-                        <id>default-cli</id>
+
                         <configuration>
-                            <mainClass>lubos.sukup.it20222023gui/lubos.sukup.it20222023gui.basic.HelloApplication</mainClass>
+                            <mainClass>myApp/lubos.sukup.it20222023gui.kalkulacka.KalkulackaApplication</mainClass>
                         </configuration>
-                    </execution>
-                </executions>
+
             </plugin>
         </plugins>
     </build>
