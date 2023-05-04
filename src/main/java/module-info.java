@@ -12,4 +12,6 @@ module myApp {
     opens lubos.sukup.it20222023gui.gridpane to javafx.fxml;
     opens lubos.sukup.it20222023gui.kalkulacka to javafx.fxml;
     exports lubos.sukup.it20222023gui.kalkulacka;
+    exports lubos.sukup.it20222023gui.databazaziakov;
+    opens lubos.sukup.it20222023gui.databazaziakov to javafx.fxml;
 }

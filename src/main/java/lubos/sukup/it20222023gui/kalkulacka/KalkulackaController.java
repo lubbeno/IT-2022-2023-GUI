@@ -17,6 +17,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class KalkulackaController {
 
     @FXML
@@ -27,9 +30,6 @@ public class KalkulackaController {
 
     @FXML
     private TextField vysledokScitanie;
-
-    @FXML
-    private ComboBox<String> komboBox;
 
     @FXML
     private Label error;
@@ -45,32 +45,38 @@ public class KalkulackaController {
     @FXML
     private TextField vysledokBezCombo;
 
+    @FXML
+    private ComboBox<String> komboBox;
 
     public void initialize(){
-        prveCisloScitanie.setText("prve");
-        druheCisloScitanie.setText("druhe");
-        vysledokScitanie.setText("vysledok");
+        ObservableList<String> operacie =
+                FXCollections.observableArrayList("+", "-", "*", "/");
+        komboBox.setItems(operacie);
+        komboBox.getSelectionModel().selectFirst();
+    }
 
+    public void vypocitaj3(){
+       String s = komboBox.getSelectionModel().getSelectedItem();
     }
 
     public void vypocitaj1(){
         //NumberFormatException
         try {
-            double cislo1 = Double.parseDouble(prveCisloScitanie.getText());
-            double cislo2 = Double.parseDouble(druheCisloScitanie.getText());
+            String prveCislo = prveCisloScitanie.getText();
+            String druheCislo = druheCisloScitanie.getText();
+            double cislo1 = Double.parseDouble(prveCislo);
+            double cislo2 = Double.parseDouble(druheCislo);
             vysledokScitanie.setText( String.valueOf(cislo1 + cislo2));
         } catch (NumberFormatException ex){
-            error.setText("zly format");
+            getError("zly format");
         }
 
     }
 
     public void textFieldVysledok(){
-        System.out.println("tst");
         try {
             double cislo1 = Double.parseDouble(prveCisloBezCombo.getText());
             double cislo2 = Double.parseDouble(druheCisloBezCombo.getText());
-
             switch (volbaOperacie.getText()){
                 case "+" :
                     vysledokBezCombo.setText(String.valueOf(cislo1 + cislo2));
@@ -85,29 +91,12 @@ public class KalkulackaController {
                     vysledokBezCombo.setText(String.valueOf(cislo1 * cislo2));
                     break;
                 default:
-                    error.setText("zla operacia");
+                    getError("zla operacia");
             }
-
             }catch (NumberFormatException e){
-            error.setText("zly format");
-        } catch (ArithmeticException ex){
-            System.out.println( "arit");
+            getError("zly format");
         }
         }
-
-
-
-
-
-      /*  ObservableList<String> operace =
-                FXCollections.observableArrayList("+", "-", "*", "/");
-        komboBox.setItems(operace);
-        komboBox.getSelectionModel().selectFirst();
-        getError("some Error");
-*/
-
-
-
 
     private void getError(String errorMessage){
         Stage dialogStage = new Stage();
@@ -116,10 +105,13 @@ public class KalkulackaController {
 
         VBox vbox = new VBox(new Text("Error !!!!!"),new Label(errorMessage), button);
         vbox.setAlignment(Pos.CENTER);
+        vbox.setPrefHeight(50);
+        vbox.setPrefWidth(200);
         vbox.setPadding(new Insets(15));
         button.setOnAction( a -> dialogStage.close());
         dialogStage.setScene(new Scene(vbox));
         dialogStage.setAlwaysOnTop(true);
+        dialogStage.setResizable(false);
         dialogStage.show();
     }
 }
