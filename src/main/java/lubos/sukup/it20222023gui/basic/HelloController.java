@@ -29,21 +29,15 @@ public class HelloController {
 
     @FXML
     public void zobrazPole(){
-
         try {
             BufferedReader reader = new BufferedReader(new FileReader("test.txt"));
             String s;
             while ( ( s = reader.readLine())  != null) {
-
                 welcomeText.setText(welcomeText.getText() + " "+ s);
-
             }
-
             reader.close();
-
         }catch (IOException ex){
             System.out.println(ex);
         }
-
     }
 }

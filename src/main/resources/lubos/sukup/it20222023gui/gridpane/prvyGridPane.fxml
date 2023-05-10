@@ -12,12 +12,10 @@
           fx:controller="lubos.sukup.it20222023gui.gridpane.PrvyGridPaneController"
           prefHeight="400.0" prefWidth="600.0" gridLinesVisible="true" alignment="CENTER"
             hgap="5" vgap="5">
-
     <columnConstraints>
         <ColumnConstraints prefWidth="100" />
         <ColumnConstraints prefWidth="150" />
     </columnConstraints>
-
     <rowConstraints>
         <RowConstraints prefHeight="30"/>
         <RowConstraints prefHeight="50"/>

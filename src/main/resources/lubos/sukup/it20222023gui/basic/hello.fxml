@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
@@ -14,7 +13,7 @@
     <Label textFill="blueviolet" text="ucime sa JavuFX"/>
     <Label textFill="red" text="Lubos Sukup" fx:id="menoPriezvisko"/>
     <TextField focusTraversable="false" promptText="zadaj sem text"
-               maxWidth="-Infinity" fx:id="prveTextovePole"></TextField>
+               maxWidth="-Infinity" fx:id="prveTextovePole"/>
     <Label text="tu je prvy label" fx:id="welcomeText"/>
     <Button text="Moje prve tlacidlo !" onAction="#onHelloButtonClick"/>
     <Button text="zobrazenie textoveho pola" onAction="#zobrazPole"/>
