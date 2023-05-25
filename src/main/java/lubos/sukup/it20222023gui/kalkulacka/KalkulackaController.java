@@ -8,15 +8,17 @@ import javafx.fxml.FXML;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -47,16 +49,33 @@ public class KalkulackaController {
 
     @FXML
     private ComboBox<String> komboBox;
+    @FXML
+    private TextField prveCisloCombo;
+    @FXML
+    private TextField druheCisloCombo;
+    @FXML
+    private TextField vysledokCombo;
 
     public void initialize(){
-        ObservableList<String> operacie =
-                FXCollections.observableArrayList("+", "-", "*", "/");
+      //  String [] zoznamOperandov = {"+", "-", "*", "/"};
+        ObservableList<String> operacie = null;
+        try {
+            operacie = FXCollections.observableArrayList(operacie());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         komboBox.setItems(operacie);
         komboBox.getSelectionModel().selectFirst();
     }
 
-    public void vypocitaj3(){
-       String s = komboBox.getSelectionModel().getSelectedItem();
+    public List<String> operacie() throws IOException{
+        BufferedReader reader = new BufferedReader( new FileReader("operacie.txt"));
+        List<String> output = new ArrayList<>();
+        String line;
+        while ((line = reader.readLine()) != null){
+            output.add(line.trim());
+        }
+         return output;
     }
 
     public void vypocitaj1(){
@@ -71,6 +90,32 @@ public class KalkulackaController {
             getError("zly format");
         }
 
+    }
+
+    @FXML
+    public void vypocitaj(){
+        try {
+            double cislo1 = Double.parseDouble(prveCisloCombo.getText());
+            double cislo2 = Double.parseDouble(druheCisloCombo.getText());
+            switch (komboBox.getSelectionModel().getSelectedItem()){
+                case "+" :
+                    vysledokCombo.setText(String.valueOf(cislo1 + cislo2));
+                    break;
+                case "-" :
+                    vysledokCombo.setText(String.valueOf(cislo1 - cislo2));
+                    break;
+                case "/" :
+                    vysledokCombo.setText(String.valueOf(cislo1 / cislo2));
+                    break;
+                case "*" :
+                    vysledokCombo.setText(String.valueOf(cislo1 * cislo2));
+                    break;
+                default:
+                    getError("zla operacia");
+            }
+        }catch (NumberFormatException e){
+            getError("zly format");
+        }
     }
 
     public void textFieldVysledok(){

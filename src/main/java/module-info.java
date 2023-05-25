@@ -1,4 +1,4 @@
-module myApp {
+module lubos.sukup.it {
     requires javafx.controls;
     requires javafx.fxml;
 

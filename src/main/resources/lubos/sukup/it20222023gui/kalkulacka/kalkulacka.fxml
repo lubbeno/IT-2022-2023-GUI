@@ -17,15 +17,15 @@
          </font>
       </Label>
       <ComboBox layoutX="194.0" layoutY="249.0" prefHeight="31.0" prefWidth="62.0" fx:id="komboBox"/>
-      <TextField layoutX="60.0" layoutY="249.0" prefHeight="31.0" prefWidth="102.0" />
+      <TextField layoutX="60.0" layoutY="249.0" prefHeight="31.0" prefWidth="102.0" fx:id="prveCisloCombo" />
       <TextField layoutX="57.0" layoutY="188.0" prefHeight="31.0" prefWidth="102.0" fx:id="prveCisloScitanie"/>
       <TextField layoutX="287.0" layoutY="188.0" prefHeight="31.0" prefWidth="102.0" fx:id="druheCisloScitanie"/>
-      <TextField layoutX="287.0" layoutY="249.0" prefHeight="31.0" prefWidth="102.0" />
+      <TextField layoutX="287.0" layoutY="249.0" prefHeight="31.0" prefWidth="102.0" fx:id="druheCisloCombo"/>
       <TextField layoutX="466.0" layoutY="188.0" prefHeight="31.0" prefWidth="102.0" fx:id="vysledokScitanie" />
-      <TextField layoutX="466.0" layoutY="249.0" prefHeight="31.0" prefWidth="102.0" />
+      <TextField layoutX="466.0" layoutY="249.0" prefHeight="31.0" prefWidth="102.0" fx:id="vysledokCombo"/>
       <Button layoutX="615.0" layoutY="188.0" mnemonicParsing="false"
               prefHeight="31.0" prefWidth="73.0" text="scitaj" onAction="#vypocitaj1"/>
-      <Button layoutX="615.0" layoutY="249.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" text="vypocitaj" />
+      <Button layoutX="615.0" layoutY="249.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="95.0" text="vypocitaj" onAction="#vypocitaj" />
       <Label alignment="TOP_CENTER" layoutX="194.0" layoutY="181.0" prefHeight="31.0" prefWidth="62.0" text="+">
          <font>
             <Font size="30.0" />
